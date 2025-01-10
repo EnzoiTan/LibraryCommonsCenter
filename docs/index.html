@@ -17,8 +17,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="icon" href="asset/LCC-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/docs/css/home.css" />
+    <link rel="icon" href="/asset/LCC-logo.png" type="image/x-icon" />
     <title>ZPPSU Library | Learning Commons Center</title>
   </head>
   <body>
@@ -31,43 +31,42 @@
           <img class="zppsu-logo" src="asset/zppsu-logo.png" alt="" />
           <img class="lcc-logo" src="asset/LCC-logo.png" alt="" />
         </div>
-        <p class="zppsu-name">ZPPSU Library</p>
-        <span class="divider"></span>
-        <p class="lib">Learning Commons Center</p>
+        <p class="lib-name">ZPPSU Learning Commons Center</p>
       </div>
       <div class="right">
         <nav>
-          <a href="#home" data-id="home">Home</a>
-          <div class="dropdown">
-            <a href="#services" data-id="services">Services</a>
-            <div class="dropdown-content">
-              <a href="#service1">Service 1</a>
-              <a href="#service2">Service 2</a>
-              <a href="#service3">Service 3</a>
-            </div>
-          </div>
-          <div class="dropdown">
-            <a href="#about us" data-id="about">About</a>
-            <div class="dropdown-content">
-              <a href="#team">Team</a>
-              <a href="#history">History</a>
-              <a href="#mission">Mission</a>
-            </div>
-          </div>
-          <!-- <a href="#contact" data-id="contact"></a> -->
-          <div class="indicator"></div>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="/activitties.html">Activities</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Updates</a>
+              <div class="dropdown-content">
+                <a href="#">Library Top Users</a>
+                <a href="#">ZPPSU Updates</a>
+                <a href="#">New Collection</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Services</a>
+              <div class="dropdown-content">
+                <a href="#">Book Borrowing</a>
+                <a href="#">Conference Room Reservation</a>
+                <a href="#">E-Lib Services</a>
+                <a href="#">Electronic Resources</a>
+                <a href="#">Online Request</a>
+                <a href="#">Library Section</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="about.html" class="dropbtn">About</a>
+              <div class="dropdown-content">
+                <a href="history.html">Our History</a>
+                <a href="lib-team.html">Our Team</a>
+                <a href="#">Contact Us</a>
+              </div>
+            </li>
+          </ul>
         </nav>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-          fill="#000000"
-        >
-          <path
-            d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"
-          />
-        </svg>
       </div>
     </nav>
 
@@ -111,10 +110,6 @@
         </div>
       </div>
       <div class="update-news">
-        <p>
-          everything you need to know about our
-          <span>Learning Commons Center!</span>
-        </p>
         <div
           id="video-container"
           style="
@@ -130,20 +125,122 @@
           <!-- Video Iframe -->
           <iframe
             id="video-iframe"
-            src="https://drive.google.com/file/d/1z9-5IixR7aO5cT2ccDvYKIx4iDww4kVh/preview?embedded=true"
-            width="84%"
-            height="84%"
-            allow="autoplay"
-            sandbox="allow-scripts allow-same-origin"
+            allowtransparency="true"
+            title="Wistia video player"
+            allowfullscreen
+            frameborder="0"
+            scrolling="no"
+            class="wistia_embed"
+            name="wistia_embed"
+            src="https://fast.wistia.net/embed/iframe/ahh8ki6m8a"
             style="
-              z-index: 1;
               position: absolute;
               top: 0;
               left: 0;
+              width: 100%;
+              height: 100%;
               border: none;
             "
           ></iframe>
         </div>
+        <div class="rationale">
+          <p class="rationale-title">Rationale</p>
+          <hr />
+          <p class="rationale-desc">
+            The Learning Commons Center library is multifaceted. It serves as
+            the heart of the academic community, providing access to a vast
+            array of scholarly resources, including print and electronic books,
+            academic journals, research, and multimedia materials. Moreover, the
+            library's role extends beyond just providing resources; it is a
+            place where knowledge is brought together with learners.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="statements">
+      <div class="MVG">
+        <div class="mission">
+          <p>Mission</p>
+          <hr />
+          <span
+            >To be a vibrant and innovative learning hub that empowers library
+            users to excel in a rapidly evolving technological landscape</span
+          >
+          <i class="fas fa-rocket icon"></i>
+        </div>
+        <div class="vision">
+          <p>Vision</p>
+          <hr />
+          <span
+            >To foster a collaborative and inclusive learning environment that
+            promotes critical thinking, information literacy, and lifelong
+            learning through access to diverse resources, cutting-edge
+            technologies, and personalized support</span
+          >
+          <i class="fas fa-eye icon"></i>
+        </div>
+        <div class="goals">
+          <p>Goals</p>
+          <hr />
+          <span
+            >Empowering learners to become information literate global citizens,
+            champion academic success, cultivate innovation and creativity,
+            embrace technological advancements, and champion open access and
+            digital scholarship</span
+          >
+          <i class="fas fa-bullseye icon"></i>
+        </div>
+      </div>
+      <!-- <div class="objts">
+        <div>
+          <p>Objectives</p>
+          <span
+            >The Learning Commons Center aims to achieve the following
+            objectives: \n 1. Acquire relevant library resources aligned with
+            the university’s curricular offerings. 2. Provide high-quality,
+            modern facilities that create a conductive to learning library
+            environment. 3. Provide extensive library instruction and
+            orientation on the services offered by the library. 4. Enhance
+            library services through networking and resource sharing. 5. Embrace
+            technology to provide prompt access to vast information</span
+          >
+        </div>
+      </div> -->
+    </div>
+
+    <div class="content2">
+      <div class="slideshow">
+        <div class="slides">
+          <img src="/slideshow-pic/ss.JPG" alt="Slide 1" />
+          <img src="/slideshow-pic/ss_2.JPG" alt="Slide 2" />
+          <img src="/slideshow-pic/ss_3.JPG" alt="Slide 3" />
+          <img src="/slideshow-pic/ss_4.jpg" alt="Slide 4" />
+          <img src="/slideshow-pic/ss_5.jpg" alt="Slide 5" />
+        </div>
+      </div>
+      <div class="facts">
+        <p class="facts-title">LIBRARY FACTS</p>
+        <hr />
+        <p class="facts-subtitle">
+          <i class="fa fa-map-marker-alt"></i> Location
+        </p>
+        <p class="facts-desc">
+          The Library is located at Lot 1 campus of the University, just behind
+          the College of Teacher Education (CET) Building
+        </p>
+        <p class="facts-subtitle"><i class="fa fa-clock"></i> Opening Hours</p>
+        <p class="facts-desc">
+          Open from 7:00 a.m. to 5:00 p.m. from Monday to Friday
+        </p>
+        <p class="facts-subtitle"><i class="fa fa-book"></i> Collection</p>
+        <p class="facts-desc">
+          The Library boosts a collection of 15,000 volumes of books, both
+          printed and electronic
+        </p>
+        <p class="facts-subtitle"><i class="fa fa-shield"></i> Security</p>
+        <p class="facts-desc2">
+          The Library has 24/7 CCTV cameras and an automated security gate
+        </p>
       </div>
     </div>
 
@@ -162,7 +259,7 @@
           <a href="https://zppsu.edu.ph/">zppsu.edu.ph</a>
           <br />
           <div class="socmed">
-            <a href="https://facebook.com/zppsulibrary"
+            <a href="https://facebook.com/zppsulibrary" target="_blank"
               ><i class="fab fa-facebook"></i
             ></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
