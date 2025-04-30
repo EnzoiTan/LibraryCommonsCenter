@@ -56,7 +56,8 @@ nav a {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1em;
   font-weight: 600;
-  color: rgb(22, 22, 22); /* Default color */
+  color: rgb(22, 22, 22);
+  /* Default color */
   padding: 34px;
   box-sizing: border-box;
   display: flex;
@@ -64,26 +65,31 @@ nav a {
 }
 
 nav a:hover {
-  color: #8b2c2c; /* Hover color */
+  color: #8b2c2c;
+  /* Hover color */
 }
 
 nav a.active {
-  color: #8b2c2c; /* Active color (maroon) */
+  color: #8b2c2c;
+  /* Active color (maroon) */
 }
 
 nav a.hidden {
-  color: rgb(22, 22, 22); /* Temporarily hide the active color */
+  color: rgb(22, 22, 22);
+  /* Temporarily hide the active color */
 }
 
 nav a.hovered {
-  color: #8b2c2c; /* Temporarily apply active color when hovering */
+  color: #8b2c2c;
+  /* Temporarily apply active color when hovering */
 }
 
 /* Dropdown menu styles */
 nav ul li .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%; /* Position the dropdown below the nav bar */
+  top: 100%;
+  /* Position the dropdown below the nav bar */
   left: 0;
   background-color: #fff;
   min-width: -moz-max-content;
@@ -150,8 +156,10 @@ nav ul li:hover .dropdown-content {
 
 .divider {
   border-left: 2px solid var(--primary-color);
-  height: 1.5em; /* Adjust the height to match the text */
-  margin: 0 8px; /* Add balanced horizontal spacing */
+  height: 1.5em;
+  /* Adjust the height to match the text */
+  margin: 0 8px;
+  /* Add balanced horizontal spacing */
 }
 
 .lib {
@@ -175,7 +183,8 @@ nav ul li:hover .dropdown-content {
 }
 
 footer {
-  background-color: rgba(139, 44, 44, 0.8); /* Semi-transparent maroon color */
+  background-color: rgba(139, 44, 44, 0.8);
+  /* Semi-transparent maroon color */
   color: #fff;
   height: 150px;
   width: 100%;
@@ -183,7 +192,8 @@ footer {
   display: flex;
   align-items: center;
   position: relative;
-  z-index: 1; /* Ensure the footer content is above the background image */
+  z-index: 1;
+  /* Ensure the footer content is above the background image */
 }
 
 .cpr {
@@ -195,7 +205,8 @@ footer {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 1; /* Ensure the footer content is above the background image */
+  z-index: 1;
+  /* Ensure the footer content is above the background image */
 }
 
 .title-cap {
@@ -213,7 +224,8 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  color: #fff; /* Text color */
+  color: #fff;
+  /* Text color */
 }
 .footer-content::before {
   content: "";
@@ -222,7 +234,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/asset/lib3.jpg") no-repeat center center;
+  background: url("/docs/assets/lib2.jpg") no-repeat center center;
   background-size: cover;
   z-index: -2;
 }
@@ -233,8 +245,10 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(81, 15, 15, 0.3); /* Overlay color */
-  z-index: -1; /* Place the overlay behind the content */
+  background: rgba(81, 15, 15, 0.3);
+  /* Overlay color */
+  z-index: -1;
+  /* Place the overlay behind the content */
 }
 
 .footer-content footer {
@@ -265,7 +279,8 @@ footer {
   -o-object-fit: cover;
   object-fit: cover;
   opacity: 80%;
-  filter: grayscale(100%); /* Converts the image to black and white */
+  filter: grayscale(100%);
+  /* Converts the image to black and white */
 }
 
 .footer-zppsu-lg {
@@ -274,7 +289,8 @@ footer {
   -o-object-fit: cover;
   object-fit: cover;
   opacity: 80%;
-  filter: grayscale(100%); /* Converts the image to black and white */
+  filter: grayscale(100%);
+  /* Converts the image to black and white */
 }
 
 .socmed i {
@@ -291,7 +307,8 @@ footer {
 
 button {
   width: 50%;
-  background-color: #8b2c2c; /* Maroon color */
+  background-color: #8b2c2c;
+  /* Maroon color */
   color: #fff;
   border: none;
   margin: 15px 0px 30px 30px;
@@ -303,7 +320,8 @@ button:hover {
   background-color: #ce8686;
 }
 button:active {
-  background-color: #721f1f; /* Darker maroon for active state */
+  background-color: #721f1f;
+  /* Darker maroon for active state */
   transform: scale(0.95);
 }
 

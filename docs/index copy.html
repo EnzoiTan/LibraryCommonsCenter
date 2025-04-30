@@ -17,9 +17,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="assets/css/lib-section.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="icon" href="assets/LCC-logo.png" type="image/x-icon" />
-    <title>Library Section | Learning Commons Center</title>
+    <title>ZPPSU Library | Learning Commons Center</title>
   </head>
   <body>
     <div class="pattern">
@@ -68,71 +68,115 @@
         </nav>
       </div>
     </nav>
+    <style>
+      .hero{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      .hero-content{
+        position: relative;
+      }
+      img{
+        width: 100%;
+        height: 80vh;
+        object-fit: cover;
+      }
+      .left-content2{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 2em;
+        font-size: 3em;
+        color: aliceblue;
+        text-shadow: black 1px 1px;
+      }
+      .right-content2{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        padding: 2em;
+        font-size: 3em;
+        color: aliceblue;
+        text-shadow: black 1px 1px;
+      }
+      .subtitle{
+        font-size: 0.5em;
+        font-weight: 100;
+        margin-top: 0.2em;
+      }
+      .hero-btn{
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0;
+        width: 18%;
+        font-size: 0.3em;
+      }
+      .hero-content2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2em;
+      }
 
-    <div class="body-content">
-      <div class="lib-title"><p>LIBRARY SECTION</p></div>
-      <div class="lib-sections">
-        <div class="lib-content">
-          <img src="lib-pic/lib.jpg" alt="" />
-          <div class="desc">
-            <p class="section-name">Reference Section</p>
-            <p class="section-desc">
-              This section contains ready-references on general knowledge and
-              relevant sources facts such as encyclopedias. atlases
-              dictionaries, handbooks, manual, etc.
-            </p>
-          </div>
+    </style>
+    <div class="hero-content">
+      <div class="hero">
+        <img src="lib-pic/lib15.jpg" alt="">
+      </div>
+      <div class="hero-content2">
+        <div class="left-content2">
+          <p>Welcome to</p>
+          <p>LEARNING COMMONS</p>
+          <p>CENTER</p>
+          <p class="subtitle">Explore, discover, and learn</p>
+          <button class="hero-btn">Announcement</button>
         </div>
-        <div class="lib-content">
-          <img src="lib-pic/lib3.JPG" alt="" />
-          <div class="desc">
-            <p class="section-name">Reserve Section</p>
-            <p class="section-desc">
-              This section contains in-demand books with limited copies
-              currently used by the faculty members.
-            </p>
-          </div>
         </div>
-        <div class="lib-content">
-          <img src="lib-pic/lib6.JPG" alt="" />
-          <div class="desc">
-            <p class="section-name">Circulation Section</p>
-            <p class="section-desc">
-              This section contains multiple copies of books that can be used by
-              students and faculty freely on the open shelves and can be
-              borrowed for overnight and home reading.
-            </p>
-          </div>
-        </div>
-        <div class="lib-content">
-          <img src="lib-pic/periodical.JPG" alt="" />
-          <div class="desc">
-            <p class="section-name">Periodical Section</p>
-            <p class="section-desc">
-              This section contains periodicals such as magazines, journals,
-              newspapers, pamphlets, leaflets, etc. All materials are for
-              librayr use only.
-            </p>
-          </div>
-        </div>
-        <div class="lib-content">
-          <img src="lib-pic/lib4.JPG" alt="" />
-          <div class="desc">
-            <p class="section-name">Filipiniana Section</p>
-            <p class="section-desc">
-              This section contains books written by a Filipino author, printed
-              and published in the Philippines, or books about the Philippines.
-            </p>
-          </div>
-        </div>
-        <div class="lib-content">
-          <img src="lib-pic/maritime.JPG" alt="" />
-          <div class="desc">
-            <p class="section-name">Maritime Section</p>
-            <p class="section-desc">
-              This section contains books about maritime education. This
-              collection can be borrowed for overnight and home reading
-            </p>
+        <div class="right-content2">
+          <div class="update-news">
+            <div
+              id="video-container"
+              style="
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- Video Iframe -->
+              <iframe
+                id="video-iframe"
+                allowtransparency="true"
+                title="Wistia video player"
+                allowfullscreen
+                frameborder="0"
+                scrolling="no"
+                class="wistia_embed"
+                name="wistia_embed"
+                src="https://fast.wistia.net/embed/iframe/ahh8ki6m8a"
+                style="
+                  position: absolute;
+                  top: 10;
+                  right: 0;
+                  width: 60%;
+                  height: 60%;
+                  border: none;
+                "
+              ></iframe>
+            </div>
+            
           </div>
         </div>
       </div>

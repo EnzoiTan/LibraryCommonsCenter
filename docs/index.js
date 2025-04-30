@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // Hover behavior
 links.forEach((link) => {
   link.addEventListener("mouseenter", () => {
-    // When hovering, apply the active color to the hovered link (but not the active one)
     if (!link.classList.contains("active")) {
       link.classList.add("hovered");
     }
@@ -35,23 +34,32 @@ links.forEach((link) => {
   });
 
   link.addEventListener("mouseleave", () => {
-    // Remove hovered state when not hovering
     link.classList.remove("hovered");
     const activeLink = document.querySelector("nav a.active");
     if (activeLink) {
-      moveIndicator(activeLink); // Restore the active indicator
+      moveIndicator(activeLink); // Restore active indicator
     }
   });
 
   link.addEventListener("click", (e) => {
-    e.preventDefault();
     const id = link.getAttribute("data-id");
+    const href = link.getAttribute("href");
 
     // Save active state
     localStorage.setItem("activeLink", id);
     links.forEach((l) => l.classList.remove("active"));
     link.classList.add("active");
     moveIndicator(link); // Move indicator to clicked link
+
+    // Allow navigation if href exists
+    if (href && href !== "#") {
+      window.location.href = href;
+    }
+
+    // Prevent default only if href is "#"
+    if (href === "#") {
+      e.preventDefault();
+    }
   });
 });
 
@@ -64,10 +72,9 @@ document.querySelector("nav").addEventListener("mouseleave", () => {
   }
 });
 
-document.getElementById('play-button').addEventListener('click', function() {
-  document.getElementById('video-thumbnail').style.display = 'none';
-  this.style.display = 'none';
-  document.getElementById('video-iframe').src += "?autoplay=1";
+// Play button functionality
+document.getElementById("play-button").addEventListener("click", function () {
+  document.getElementById("video-thumbnail").style.display = "none";
+  this.style.display = "none";
+  document.getElementById("video-iframe").src += "?autoplay=1";
 });
-
-
