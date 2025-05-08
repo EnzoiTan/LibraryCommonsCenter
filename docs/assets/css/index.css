@@ -122,7 +122,6 @@ nav ul li .dropdown-content a {
 .dropdown-content {
   padding: 5px;
 }
-
 .dropdown-content a {
   font-weight: 100;
 }
@@ -240,7 +239,6 @@ footer {
   width: 100%;
   color: #fff;
 }
-
 .footer-content::before {
   content: "";
   position: absolute;
@@ -252,7 +250,6 @@ footer {
   background-size: cover;
   z-index: -2;
 }
-
 .footer-content::after {
   content: "";
   position: absolute;
@@ -331,11 +328,9 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease, padding 0.3s ease;
 }
-
 button:hover {
   background-color: #ce8686;
 }
-
 button:active {
   background-color: #721f1f;
   /* Darker maroon for active state */
@@ -348,12 +343,10 @@ button:active {
   box-sizing: border-box;
   display: flex;
 }
-
 .body-content .announcement-sect {
   width: 25%;
   height: 100%;
 }
-
 .body-content .announcement-sect .announcement-card {
   padding: 10px 10px 10px 30px;
   background-color: #e0e0e0;
@@ -363,10 +356,9 @@ button:active {
   align-items: center;
   font-size: 1.1em;
   font-weight: bold;
-  margin: 50px 0px 0px 0px;
+  margin: 100px 0px 0px 0px;
   gap: 10px;
 }
-
 .body-content .announcement-sect .update-content {
   background-color: #f4f4f4;
   border-bottom: solid var(--primary-color) 1px;
@@ -377,7 +369,6 @@ button:active {
   font-size: 1em;
   padding: 10px 30px 10px 30px;
 }
-
 .body-content .announcement-sect .update-content span {
   color: var(--primary-color);
   font-weight: bold;
@@ -386,36 +377,30 @@ button:active {
   font-size: 1em;
   margin-bottom: 5px;
 }
-
 .body-content .update-news {
   width: 75%;
   height: 100%;
-  margin: 50px 0px 0px 50px;
+  margin: 100px 0px 0px 50px;
 }
-
 .body-content .update-news .news-desc {
   font-size: 1.2em;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
-
 .body-content .update-news .news-desc span {
   font-size: 1.2em;
   font-weight: 900;
   font-style: italic;
 }
-
 .body-content .hero-header {
   width: 100%;
   height: 50%;
   display: flex;
   align-items: center;
 }
-
 .body-content .hero-header .iframe {
   width: 60%;
 }
-
 .body-content .content2 {
   width: 100%;
   height: 100vh;
@@ -424,7 +409,6 @@ button:active {
   align-items: center;
   gap: 10px;
 }
-
 .body-content .content2 .facts {
   display: flex;
   justify-content: center;
@@ -437,30 +421,25 @@ button:active {
   background-color: #8b2c2c;
   border-radius: 10px;
 }
-
 .body-content .content2 .facts i {
   color: white;
   margin-right: 5px;
 }
-
 .body-content .content2 .facts .facts-title {
   color: #fff;
   font-size: 2em;
   font-weight: 900;
   text-transform: uppercase;
 }
-
 .body-content .content2 .facts .facts-subtitle {
   color: white;
   font-size: 1.2em;
   font-weight: 900;
 }
-
 .body-content .content2 .facts .facts-desc {
   color: #fff;
   font-weight: 100;
 }
-
 .body-content .content2 .slideshow {
   width: 50%;
   height: 400px;
@@ -468,39 +447,33 @@ button:active {
   position: relative;
   overflow: hidden;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .body-content .content2 .slides {
   display: flex;
   width: 300%;
   /* Adjust based on the number of images */
   animation: slide 10s infinite;
 }
-
 .body-content .content2 .slides img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
-
 @keyframes slide {
   0% {
     transform: translateX(0%);
   }
-
   33% {
     transform: translateX(-100%);
   }
-
   66% {
     transform: translateX(-200%);
   }
-
   100% {
     transform: translateX(0%);
   }
@@ -511,20 +484,17 @@ button:active {
   width: 80%;
   padding: 50px;
 }
-
 .rationale .rationale-title {
   color: white;
   font-size: 1.5em;
   font-weight: 900;
   text-transform: uppercase;
 }
-
 .rationale hr {
   margin: 10px 0px 10px 0px;
   border: solid white 1px;
   width: 200px;
 }
-
 .rationale .rationale-desc {
   color: rgba(240, 240, 240, 0.929);
   font-size: 1.2em;
@@ -552,51 +522,40 @@ button:active {
   border-bottom: #8b2c2c 3px solid;
   border-top: #8b2c2c 3px solid;
 }
-
 .MVGO .mvgo-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
   align-items: start;
 }
-
 .MVGO .mvgo-container .image-column {
   grid-column: 1;
   text-align: center;
 }
-
 .MVGO .mvgo-container .image-column .mvgo-image {
   max-width: 67%;
   height: auto;
   border-radius: 10px;
 }
-
 .MVGO .mvgo-container .text-column {
   grid-column: 2;
 }
-
 .MVGO .mvgo-container .text-column h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: white;
-  background-color: #8b2c2c;
-  width: 25%;
-  padding: 5px 10px 5px 15px;
+  color: #8b2c2c;
 }
-
 .MVGO .mvgo-container .text-column p {
   font-size: 1rem;
   color: #292929;
   line-height: 1.6;
   margin-bottom: 20px;
 }
-
 .MVGO .mvgo-container .text-column ul {
   list-style-type: disc;
   padding-left: 20px;
   text-align: left;
 }
-
 .MVGO .mvgo-container .text-column ul li {
   font-size: 1rem;
   color: #292929;
@@ -611,7 +570,6 @@ button:active {
   align-items: center;
   margin: 30px 50px 80px 50px;
 }
-
 .content2 .facts {
   display: flex;
   justify-content: center;
@@ -621,88 +579,71 @@ button:active {
   height: 100%;
   overflow: hidden;
 }
-
 .content2 .facts hr {
   margin: 10px 0px 30px 0px;
   border: solid rgb(255, 255, 255) 1px;
   width: 70%;
 }
-
 .content2 .facts i {
   color: white;
   margin-right: 5px;
 }
-
 .content2 .facts .facts-title {
   color: #fff;
   font-size: 1.8em;
   font-weight: 900;
   text-transform: uppercase;
 }
-
 .content2 .facts .facts-subtitle {
   color: white;
   font-size: 1.2em;
   font-weight: 900;
 }
-
 .content2 .facts .facts-desc {
   color: #fff;
   font-weight: 100;
   margin: 8px 0px 25px 0px;
 }
-
 .content2 .facts .facts-desc2 {
   color: #fff;
   font-weight: 100;
   margin: 8px 0px 10px 0px;
 }
-
 .content2 .slideshow {
   overflow: hidden;
   width: 100%;
   height: 100%;
 }
-
 .content2 .slides {
   display: flex;
   width: 500%;
   /* Adjust based on the number of images */
   animation: slide 20s infinite;
 }
-
 .content2 .slides img {
   width: 20%;
   /* Adjust based on the number of images */
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
-
 @keyframes slide {
   0% {
     transform: translateX(0%);
   }
-
   20% {
     transform: translateX(-20%);
   }
-
   40% {
     transform: translateX(-40%);
   }
-
   60% {
     transform: translateX(-60%);
   }
-
   80% {
     transform: translateX(-80%);
   }
-
   100% {
     transform: translateX(0%);
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
