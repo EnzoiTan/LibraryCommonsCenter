@@ -17,11 +17,77 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="icon" href="assets/LCC-logo.png" type="image/x-icon" />
     <title>ZPPSU Library | Learning Commons Center</title>
+
+    <!-- Firebase SDK (Modular v9+) -->
+    <script type="module">
+      // Import the necessary Firebase components
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+      
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBG5W4CYRdpnwUPhr6ZgDawiBMjX9glZwc",
+        authDomain: "lcc-updates.firebaseapp.com",
+        projectId: "lcc-updates",
+        storageBucket: "lcc-updates.appspot.com",
+        messagingSenderId: "59064583935",
+        appId: "1:59064583935:web:8393498a3eeaa7197a6eca",
+        measurementId: "G-GQJ7P5GNE3"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      // Fetch announcements
+      async function fetchAnnouncements() {
+        const announcementUpdates = document.getElementById('announcementUpdates');
+        announcementUpdates.innerHTML = ''; // Clear before adding new announcements
+
+        const q = query(collection(db, "lcc-annoucement"), orderBy("createdAt", "desc"));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const announcementHTML = `
+          <p class="update-content">
+            <span>${data.title}</span>
+            <span class="announcement-date">${new Date(data.createdAt.seconds * 1000).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}</span>
+
+            ${data.content}
+          </p>
+        `;
+          announcementUpdates.innerHTML += announcementHTML;
+        });
+      }
+
+      // Call the function to fetch and display announcements when the page loads
+      window.onload = fetchAnnouncements;
+    </script>
   </head>
   <body>
+    <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/681af94b50affd190e993371/1iqklrkld';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+      })();
+      </script>
     <div class="pattern">
       <!-- <i class="fa-solid fa-clock"></i> -->
     </div>
@@ -37,10 +103,11 @@
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="activities.html">Activities</a></li>
+            <!-- <li><a href="#">Announcements</a></li> -->
             <li class="dropdown">
               <a href="#" class="dropbtn">Updates</a>
               <div class="dropdown-content">
+                <a href="activities.html">Activities</a>
                 <a href="top-users.html">Library Top Users</a>
                 <a href="https://zppsu.edu.ph/news-and-updates/" target="_blank">ZPPSU Updates</a>
                 <a href="new-coll.html">New Collection</a>
@@ -49,7 +116,7 @@
             <li class="dropdown">
               <a href="#" class="dropbtn">Services</a>
               <div class="dropdown-content">
-                <a href="#">Book Borrowing</a>
+                <a href="https://tinyurl.com/EbookRequests">Book Borrowing</a>
                 <a href="#">Conference Room Reservation</a>
                 <a href="#">E-Lib Services</a>
                 <a href="elec_resources.html">Electronic Resources</a>
@@ -62,6 +129,7 @@
                 <div class="dropdown-content">
                 <a href="history.html">Our History</a>
                 <a href="lib-team.html">Our Team</a>
+                <a href="firebase.html">Policies</a>
               </div>
             </li>
           </ul>
@@ -70,7 +138,12 @@
     </nav>
 
     <div class="body-content">
+      
       <div class="announcement-sect">
+        <div class="did-you-know">
+          <h3>📚 Did You Know?</h3>
+          <p id="didYouKnowText">Loading interesting fact...</p>
+        </div>
         <div class="announcement-card">
           <i
             class="fa-solid fa-bullhorn fa-beat fa-lg"
@@ -79,34 +152,13 @@
           <p>ANNOUNCEMENT</p>
         </div>
 
-        <div class="updates">
-          <p class="update-content">
-            <span>Lorem Ipsum</span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. At labore
-            non fuga consequuntur.
-          </p>
-          <p class="update-content">
-            <span>Lorem amet</span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. At labore
-            non fuga consequuntur cumque perspiciatis culpa voluptatem totam
-            nam. Corrupti.
-          </p>
-          <p class="update-content">
-            <span>Ipsum dolor</span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </p>
-          <p class="update-content">
-            <span>Lorem Ipsum accusamus</span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. At labore
-            non fuga consequuntur cumque perspiciatis culpa voluptatem totam
-            nam. Corrupti nobis laboriosam numquam dolores voluptas unde iure
-            eligendi, ad vitae! Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. A cumque temporibus ex animi enim? Dolores
-            eligendi, accusamus, consequuntur ipsam voluptates omnis repudiandae
-            totam pariatur doloremque ea atque sint incidunt fuga?
-          </p>
-          <button>View more...</button>
+        <div class="updates" id="announcementUpdates">
+          <!-- Announcements will be displayed here -->
         </div>
+
+        <button id="seeMoreButton" class="see-more-btn">See More</button>
+
+        
       </div>
       <div class="update-news">
         <div
@@ -156,61 +208,51 @@
         </div>
       </div>
     </div>
-    <!-- <div class="important">
-      <p>Library Top Users</p>
-      <p>New Book Collection</p>
-      <p>Borrow Book</p>
-      <p>Online Request</p>
-    </div> -->
+    
     <div class="MVGO">
       <div class="mvgo-container">
         <!-- Image Column -->
         <div class="mvgo-column image-column">
           <img src="assets/book_cover.png" alt="MVGO Image" class="mvgo-image" />
         </div>
+    
         <!-- Text Content Column -->
         <div class="mvgo-column text-column">
-          <h3>Mission</h3>
+          <h3><i class="fas fa-book-open"></i> Mission</h3>
           <p>
             To be a vibrant and innovative learning hub that empowers library users
             to excel in a rapidly evolving technological landscape.
           </p>
-          <h3>Vision</h3>
+    
+          <h3><i class="fas fa-lightbulb"></i> Vision</h3>
           <p>
             To foster a collaborative and inclusive learning environment that
             promotes critical thinking, information literacy, and lifelong learning
             through access to diverse resources, cutting-edge technologies, and
             personalized support.
           </p>
-          <h3>Goal</h3>
+    
+          <h3><i class="fas fa-crosshairs"></i> Goal</h3>
           <p>
             Empowering learners to become information-literate global citizens,
             champion academic success, cultivate innovation and creativity, embrace
             technological advancements, and champion open access and digital
             scholarship.
           </p>
-          <h3>Objectives</h3>
+    
+          <h3><i class="fas fa-compass"></i> Objectives</h3>
           <ul>
-            <li>
-              Acquire relevant library resources aligned with the university’s
-              curricular offerings.
-            </li>
-            <li>
-              Provide high-quality, modern facilities that create a conducive
-              learning library environment.
-            </li>
-            <li>
-              Provide extensive library instruction and orientation on the services
-              offered by the library.
-            </li>
-            <li>
-              Enhance library services through networking and resource sharing.
-            </li>
+            <li>Acquire relevant library resources aligned with the university’s curricular offerings.</li>
+            <li>Provide high-quality, modern facilities that create a conducive learning library environment.</li>
+            <li>Provide extensive library instruction and orientation on the services offered by the library.</li>
+            <li>Enhance library services through networking and resource sharing.</li>
             <li>Embrace technology to provide prompt access to vast information.</li>
           </ul>
         </div>
       </div>
     </div>
+    
+    
     <div class="content2">
       <div class="facts">
         <p class="facts-title">LIBRARY FACTS</p>

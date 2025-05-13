@@ -302,8 +302,17 @@ footer {
   background-color: #E1AF19;
 }
 
+.lib-name {
+  font-size: 1.6em;
+  color: var(--primary-color);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 900;
+}
+
 .body-content {
-  height: 190vh;
+  height: 160vh;
+  background-color: maroon;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='3' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e0e0e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   margin: 0px 50px 0px 50px;
   box-sizing: border-box;
   display: flex;
@@ -318,13 +327,13 @@ footer {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2.2em;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--text-color);
     margin-bottom: 30px;
 
     hr {
       width: 100px;
       height: 2px;
-      background-color: #8b2c2c;
+      background-color: white;
       border: none;
       margin-right: 20px;
       margin-left: 20px;
@@ -346,7 +355,7 @@ footer {
       width: 250px;
       height: 250px;
       object-fit: cover;
-      border: solid #8b2c2c 2px;
+      border: solid white 2px;
     }
 
     .name {
@@ -354,14 +363,14 @@ footer {
       font-size: 1.1em;
       text-transform: uppercase;
       font-weight: bold;
+      color: var(--text-color);
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .position {
       font-size: 0.9em;
       font-weight: 500;
-      font-weight: bold;
-      color: var(--primary-color);
+      color: var(--text-color);
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
   }
@@ -387,6 +396,7 @@ footer {
     .name {
       margin-top: 10px;
       font-size: 0.8em;
+      color: white;
       text-transform: uppercase;
       font-weight: bold;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -395,8 +405,7 @@ footer {
     .position {
       font-size: 0.8em;
       font-weight: 500;
-      font-weight: bold;
-      color: var(--primary-color);
+      color: white;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
@@ -405,7 +414,7 @@ footer {
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border: solid #8b2c2c 2px;
+      border: solid #ffffff 2px;
     }
   }
 }

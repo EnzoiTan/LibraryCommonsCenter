@@ -21,10 +21,6 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e0e0e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-.body-content {
-    flex: 1;
-}
-
 .pattern {
     background-color: #8b2c2c;
     width: 100%;
@@ -135,15 +131,6 @@ nav ul li:hover .dropdown-content {
     width: 100%;
     display: flex;
     align-items: center;
-}
-
-.left {
-    padding-left: 50px;
-}
-
-.right {
-    padding-right: 50px;
-    justify-content: end;
 }
 
 .lib-name {
@@ -338,7 +325,7 @@ button {
 
 .body-content {
     height: 150vh;
-    margin: 0px 50px 0px 50px;
+    margin: 0px 150px 0px 150px !important;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -350,6 +337,7 @@ button {
 
         img {
             width: 400px;
+            height: auto;
         }
     }
 
