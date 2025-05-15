@@ -26,6 +26,107 @@ body {
 
 .body-content {
   flex: 1;
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-gallery {
+  padding: 20px;
+  overflow: hidden;
+  /* Hide overflowing content */
+  position: relative;
+  width: 100%;
+  /* Ensure it takes the full width of the container */
+}
+
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  /* Ensure it takes the full width of the container */
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  /* Smooth transition for sliding */
+  width: 200%;
+  /* Adjust width to fit all groups (2 groups in this case) */
+}
+
+.gallery-group {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 100%;
+  padding-right: 20px;
+  /* Each group takes 100% of the container width */
+}
+
+.book-img {
+  width: 18%;
+  /* Ensure 4 images fit in a single row */
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-img:hover {
+  transform: scale(1.05);
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 50;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 * {
@@ -65,7 +166,8 @@ nav a {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1em;
   font-weight: 600;
-  color: rgb(22, 22, 22); /* Default color */
+  color: rgb(22, 22, 22);
+  /* Default color */
   padding: 34px;
   box-sizing: border-box;
   display: flex;
@@ -73,26 +175,31 @@ nav a {
 }
 
 nav a:hover {
-  color: #8b2c2c; /* Hover color */
+  color: #8b2c2c;
+  /* Hover color */
 }
 
 nav a.active {
-  color: #8b2c2c; /* Active color (maroon) */
+  color: #8b2c2c;
+  /* Active color (maroon) */
 }
 
 nav a.hidden {
-  color: rgb(22, 22, 22); /* Temporarily hide the active color */
+  color: rgb(22, 22, 22);
+  /* Temporarily hide the active color */
 }
 
 nav a.hovered {
-  color: #8b2c2c; /* Temporarily apply active color when hovering */
+  color: #8b2c2c;
+  /* Temporarily apply active color when hovering */
 }
 
 /* Dropdown menu styles */
 nav ul li .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%; /* Position the dropdown below the nav bar */
+  top: 100%;
+  /* Position the dropdown below the nav bar */
   left: 0;
   background-color: #fff;
   min-width: -moz-max-content;
@@ -159,8 +266,10 @@ nav ul li:hover .dropdown-content {
 
 .divider {
   border-left: 2px solid var(--primary-color);
-  height: 1.5em; /* Adjust the height to match the text */
-  margin: 0 8px; /* Add balanced horizontal spacing */
+  height: 1.5em;
+  /* Adjust the height to match the text */
+  margin: 0 8px;
+  /* Add balanced horizontal spacing */
 }
 
 .lib {
@@ -184,7 +293,8 @@ nav ul li:hover .dropdown-content {
 }
 
 footer {
-  background-color: rgba(139, 44, 44, 0.8); /* Semi-transparent maroon color */
+  background-color: rgba(139, 44, 44, 0.8);
+  /* Semi-transparent maroon color */
   color: #fff;
   height: 150px;
   width: 100%;
@@ -192,7 +302,8 @@ footer {
   display: flex;
   align-items: center;
   position: relative;
-  z-index: 1; /* Ensure the footer content is above the background image */
+  z-index: 1;
+  /* Ensure the footer content is above the background image */
 }
 
 .cpr {
@@ -204,7 +315,8 @@ footer {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 1; /* Ensure the footer content is above the background image */
+  z-index: 1;
+  /* Ensure the footer content is above the background image */
 }
 
 .title-cap {
@@ -222,7 +334,8 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  color: #fff; /* Text color */
+  color: #fff;
+  /* Text color */
 }
 .footer-content::before {
   content: "";
@@ -242,8 +355,10 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(81, 15, 15, 0.3); /* Overlay color */
-  z-index: -1; /* Place the overlay behind the content */
+  background: rgba(81, 15, 15, 0.3);
+  /* Overlay color */
+  z-index: -1;
+  /* Place the overlay behind the content */
 }
 
 .footer-content footer {
@@ -274,7 +389,8 @@ footer {
   -o-object-fit: cover;
   object-fit: cover;
   opacity: 80%;
-  filter: grayscale(100%); /* Converts the image to black and white */
+  filter: grayscale(100%);
+  /* Converts the image to black and white */
 }
 
 .footer-zppsu-lg {
@@ -283,7 +399,8 @@ footer {
   -o-object-fit: cover;
   object-fit: cover;
   opacity: 80%;
-  filter: grayscale(100%); /* Converts the image to black and white */
+  filter: grayscale(100%);
+  /* Converts the image to black and white */
 }
 
 .socmed i {
@@ -300,7 +417,8 @@ footer {
 
 button {
   width: 50%;
-  background-color: #8b2c2c; /* Maroon color */
+  background-color: #8b2c2c;
+  /* Maroon color */
   color: #fff;
   border: none;
   margin: 15px 0px 30px 30px;
@@ -312,7 +430,8 @@ button:hover {
   background-color: #ce8686;
 }
 button:active {
-  background-color: #721f1f; /* Darker maroon for active state */
+  background-color: #721f1f;
+  /* Darker maroon for active state */
   transform: scale(0.95);
 }
 

@@ -85,13 +85,57 @@
       </div>
     </nav>
 
+    <style>
+      .title{
+        font-family: sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #8b3c3c;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+      }
+
+      .collection{
+        background-color: #8b3c3c;
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+
     <div class="body-content">
-      <iframe
-        src="https://docs.google.com/document/d/1SCQrCCb6pTKqZz7MnyguwpPmKrJkapNv/preview"
-        width="100%"
-        height="600px"
-        style="border: none"
-      ></iframe>
+      <p class="title">New Book Collection</p>
+      <div class="collection-gallery">
+  <div class="gallery-wrapper">
+    <div class="nav-btn prev-btn">&#10094;</div>
+    <div class="gallery-track">
+      <!-- Group 1 -->
+      <div class="gallery-group">
+        <img src="assets/book_cover.png" class="book-img" alt="Book 1" />
+        <img src="assets/book_cover.png" class="book-img" alt="Book 2" />
+        <img src="assets/book_cover.png" class="book-img" alt="Book 3" />
+        <img src="assets/book_cover.png" class="book-img" alt="Book 4" />
+        <img src="assets/book_cover.png" class="book-img" alt="Book 4" />
+      </div>
+      <!-- Group 2 -->
+      <div class="gallery-group">
+        <img src="assets/cover.jpg" class="book-img" alt="Book 5" />
+        <img src="assets/cover.jpg" class="book-img" alt="Book 6" />
+        <img src="assets/cover.jpg" class="book-img" alt="Book 7" />
+        <img src="assets/cover.jpg" class="book-img" alt="Book 8" />
+        <img src="assets/cover.jpg" class="book-img" alt="Book 8" />
+      </div>
+    </div>
+    <div class="nav-btn next-btn">&#10095;</div>
+  </div>
+</div>
+
+<!-- Modal for Enlarged Image -->
+<div id="imageModal" class="modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
     </div>
 
     <div class="footer-content">
@@ -127,4 +171,43 @@
     </div>
   </body>
   <script src="index.js"></script>
+  <script>
+  const track = document.querySelector('.gallery-track');
+  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  let currentSlide = 0;
+
+  nextBtn.onclick = () => {
+    if (currentSlide < 1) {
+      currentSlide++;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  };
+
+  prevBtn.onclick = () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  };
+
+  // Modal logic
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeModal = document.querySelector(".close-modal");
+
+  document.querySelectorAll('.book-img').forEach(img => {
+    img.onclick = () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    };
+  });
+
+  closeModal.onclick = () => modal.style.display = "none";
+
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+</script>
+
 </html>
